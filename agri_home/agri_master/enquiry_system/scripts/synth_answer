@@ -1,0 +1,29 @@
+#!/bin/tcsh
+
+if ($# < 3) then
+	echo "arg1 - keyword"
+	echo "arg2 - answers map"
+    echo "arg3 - answers list"
+	echo "arg4 - previous keyword" #newly added
+	echo "arg5 - previous keyword 2" #newly added
+	exit(-1)
+endif
+
+#to narrow down to one answer when the answer has the same keyword.
+#we use the previous keyword to narrow down
+if (`cat $2 | cut -d " " -f1 | grep -w $1 | wc -l` > 1) then
+	if (`grep -w $1 $2 | grep -w $4 | wc -l` > 1) then
+		set ans = `grep -w $1 $2 | grep -w $4 | grep -w $5 | cut -d " " -f2`
+	else
+		set ans = `grep -w $1 $2 | grep -w $4 | cut -d " " -f2`
+	endif
+else
+	set ans = `grep -w $1 $2 |cut -d " " -f2`
+endif
+
+set answer = `grep -w $ans $3 |cut -d "-" -f2`
+
+echo $answer > ../answer.txt
+echo 102 > ../tasker.txt
+./scripts/complete "$answer"
+sleep 1

@@ -1,0 +1,33 @@
+VERSION=1.0
+N=12   L=19   
+I=0    W=!NULL               
+I=1    W=!NULL               
+I=2    W=arxuwadxai          
+I=3    W=!NULL               
+I=4    W=edirpaaraasuuzhndilai 
+I=5    W=matxrxawai          
+I=6    W=ndadxaweuwayalparaamarippeu 
+I=7    W=ndadxaweuwayaltayaarippeu 
+I=8    W=ndiirndirwaagam     
+I=9    W=ndunxnxuutxtxaccatteu 
+I=10   W=tazhaiccatteuseemippeu 
+I=11   W=uram                
+J=0     S=3    E=1    
+J=1     S=0    E=2    
+J=2     S=2    E=3    
+J=3     S=4    E=3    
+J=4     S=5    E=3    
+J=5     S=6    E=3    
+J=6     S=7    E=3    
+J=7     S=8    E=3    
+J=8     S=9    E=3    
+J=9     S=10   E=3    
+J=10    S=11   E=3    
+J=11    S=0    E=4    
+J=12    S=0    E=5    
+J=13    S=0    E=6    
+J=14    S=0    E=7    
+J=15    S=0    E=8    
+J=16    S=0    E=9    
+J=17    S=0    E=10   
+J=18    S=0    E=11   

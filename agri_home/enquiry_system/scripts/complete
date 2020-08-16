@@ -1,0 +1,61 @@
+#!/bin/tcsh
+
+if ($# != 1) then
+	echo "arg1 - text to be synthesised"
+#	echo "arg2 - system"
+	exit(-1)
+endif
+
+#needed for php to trigger festival
+set FESTD = "/home/jjoysingh/speech/festival"
+
+rm -f ../wav/1_*.wav
+rm -rf etc/text prompt-utt/* lab/* wav/* lists/gen.scp temp* lists/word lists/trans_word lists/out_word
+rm -f wordpronunciation
+echo "" > log
+echo "$1" > temp2
+
+cp festvox/ssn_tamil_male_clunits.scm festvox/ssn_hts_demo_clunits.scm
+cp festvox/ssn_tamil_female_lexicon.scm festvox/ssn_hts_demo_lexicon.c=scm
+
+perl scripts/normalize_all.pl temp2 temp3
+cp temp3 temp2
+set sentence = `cat temp2`
+echo "(1 "'"'$sentence.'"'")" > lists/text
+
+echo "perl done" >> log
+
+$FESTD/bin/festival -b festvox/build_clunits.scm '(build_prompts "lists/text")'
+make > log_makelog
+
+echo "make done" >> log
+
+ls `pwd`/lab/1.lab > lists/gen.scp
+perl scripts/hts_engine.pl scripts/Config.pm > log_perllog
+# perl scripts/hts_engine.pl > log_perllog # Check if perl writes to log
+# play wav/1.wav
+
+echo "hts engine done" >> log
+
+while (1)
+	if (-e wav/1.wav) then
+		break;
+	endif
+sleep 0.5
+end
+
+set appendtext = `date +"%H%M%S"`
+mv wav/1.wav ../wav/1_"$appendtext".wav
+echo "$appendtext" > ../wav/wavefile.txt
+echo "" > ../start.txt
+echo 202 > ../tasker.txt
+
+set startstatus = `cat ../finishplay.txt`
+while ($startstatus != '210')
+	sleep 1
+	set startstatus = `cat ../finishplay.txt`
+end
+
+echo "" > ../finishplay.txt
+echo "" > ../tasker.txt
+#rm phn phone syl1 syl2 syl3 syllables temp2 temp3

@@ -1,0 +1,72 @@
+#!/bin/tcsh
+
+if ($# != 1) then
+	echo "arg1 - path to appropriate lexicon folder"
+	exit(-1)
+endif
+
+# echo "Start recording"
+# arecord -d 3 -r 16000 -f S16_LE -t wav wav/test.wav
+# echo "Recording complete"
+
+rm -f ../wav/test.wav
+rm -f wav/test.wav
+rm -f wav/test1.wav
+
+echo 201 > ../tasker.txt
+# while [ ! -f ../wav/test.wav ]; do sleep 1; done
+while (1)
+	if (-e ../wav/test.wav) then
+		break;
+	endif
+sleep 1
+end
+
+echo 100 > ../tasker.txt
+
+mv -f ../wav/test.wav wav/test1.wav
+ch_wave -f 44100 -F 16000 -start 0.7 -o wav/test.wav wav/test1.wav
+
+HCopy -C config_files/speech_config_file wav/test.wav wav/test.mfc
+
+ls wav/test.mfc > lists/test_mfc
+
+HVite -C config_files/feature_config_file -S lists/test_mfc -i lists/recog_out -H lexicon/newMacros -w $1/network $1/dictionary lexicon/tiedlist
+
+grep -v SIL lists/recog_out |grep -v gw |head -3 |tail -1 |cut -d " " -f3 > keyword
+
+# Check likelihood ratio
+set kw = `cat keyword`
+set st = `grep -v SIL lists/recog_out |grep -v gw |head -3 |tail -1 |cut -d " " -f1`
+set et = `grep -v SIL lists/recog_out |grep -v gw |head -3 |tail -1 |cut -d " " -f2`
+
+HCopy -C config_files/speech_config_file -s $st -e $et wav/test.wav wav/test_kw.mfc
+ls wav/test_kw.mfc > lists/test_mfc
+
+HVite -n 25 2 -C config_files/feature_config_file -S lists/test_mfc -i lists/recog_out_iso -H lexicon/newMacros -w $1/network_isolated $1/dictionary lexicon/tiedlist
+
+set lh1 = `cat lists/recog_out_iso | head -3 | tail -1 | cut -d " " -f4` #likelihood1
+set wrd1 = `cat lists/recog_out_iso | head -3 | tail -1 | cut -d " " -f3`
+set lcnt = `cat lists/recog_out_iso | wc -l` #likelihood count
+if ($lcnt > 5) then
+	set lh2 = `cat lists/recog_out_iso | head -5 | tail -1 | cut -d " " -f4` #likelihood2
+        set wrd2 = `cat lists/recog_out_iso | head -5 | tail -1 | cut -d " " -f3` #confusion word
+        set ratio = `echo "scale=2; $lh1 / $lh2" | bc` #find the ratio
+else
+        set ratio = 0
+endif
+
+set thr = `grep -w $kw lists/likelihood_threshold_map |cut -d " " -f2`
+set mod_thr = `echo "1.02 * $thr" | bc`
+set flg = `echo "$ratio > $mod_thr" | bc`
+
+#ratio should be less than the threshold set
+if ($flg == 1) then
+	echo "wrong" > lh_dec
+else
+	echo "right" > lh_dec
+endif
+
+echo "1best:$wrd1 2best:$wrd2 flag:$flg ratio:$ratio threshold:$mod_thr" > rec_out.txt
+
+#rm wav/test* lists/recog_out

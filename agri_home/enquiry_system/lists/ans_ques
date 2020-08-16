@@ -1,0 +1,98 @@
+#contains the question to be asked next after the option is recieved. col 1 is the answer from the user and col2 is the next question. If there are more than one answer that has the same keyword then we will use the previous to determine the unique value
+
+raganggalx Q14
+paruwam Q12
+
+iiroodxeu Q15
+udagai Q15
+karuur Q15
+kanniyaakumari Q15
+kaanjjipuram Q15
+krisxnxagiri Q15
+kuudxaluur Q15
+kooyambuttuur Q15
+seelam Q15
+tanjjaawuur Q15
+darumaburi Q15
+dinxdxeukkal Q15
+tirucciraappalxlxi Q15
+tirundelweeli Q15
+tiruwanxnxaamalai Q15
+tiruwalxlxuur Q15
+tiruwaaruur Q15
+tuutteukkudxi Q15
+teenii Q15
+pudeukkootxtxai Q15
+perambaluur Q15
+madurai Q15
+raamandaadapuram Q15
+wirudundagar Q15
+wizhuppuram Q15
+welxlxuur Q15
+tirucci Q15
+ndaagappatxtxinam Q15
+siwaganggai Q15
+
+ndaatxrxanggaalmeelaanxmai Q60
+wagaigalxmatxrxumtayaarippeumurxaigalx Q61 ndaatxrxanggaalmeelaanxmai
+widai Q62 ndaatxrxanggaalmeelaanxmai
+meelaanxmai Q63 ndaatxrxanggaalmeelaanxmai
+seetxrxeundaatxrxanggaal Q64 wagaigalxmatxrxumtayaarippeumurxaigalx
+paayndaatxrxanggaal Q65 wagaigalxmatxrxumtayaarippeumurxaigalx
+puzhudindaatxrxanggaal Q66 wagaigalxmatxrxumtayaarippeumurxaigalx
+widaiyalxaweu Q67 widai
+widaitaram Q68 widai
+widaindeertti Q69 widai
+kaalaatxtxawanxai
+ndiirndirwaagam Q70 meelaanxmai
+urandirwaagam Q71 meelaanxmai
+
+saagubadxiccuuzhalgalx Q20
+ndanseymurxai Q24 saagubadxiccuuzhalgalx
+maanaawaarimurxai Q25 saagubadxiccuuzhalgalx
+pagudipaasanasaagubadximurxai Q32 saagubadxiccuuzhalgalx
+tirunddiyandelsaagubadximurxai Q27 ndanseymurxai
+ndanjjaiyilseetxrxeuuzhawilndadxaweundel Q28 ndanseymurxai
+ndanjjaiyilseetxrxuwayalilndeeradxiwidaippeu Q29 ndanseymurxai
+puzhudiwidaittamaanaawaarindel Q30 maanaawaarimurxai
+maanaawaarimeetxtxeukkaalndel Q31 maanaawaarimurxai
+mukkiyapadxindilaigalx Q33 tirunddiyandelsaagubadximurxai
+seyalpaadxugalx Q34 tirunddiyandelsaagubadximurxai
+ndanmaigalxmatxrxumidxarppaadxugalx Q35 tirunddiyandelsaagubadximurxai
+oppiidxeumatxrxumweerxupaadxugalx Q36 tirunddiyandelsaagubadximurxai
+ndaatxrxanggaal Q37 ndanjjaiyilseetxrxeuuzhawilndadxaweundel
+payirmeelaanxmai Q38 ndanjjaiyilseetxrxeuuzhawilndadxaweundel
+muntayaarippeu  ndanjjaiyilseetxrxeuuzhawilndadxaweundel
+muntayaarippeu Q39 ndanjjaiyilseetxrxuwayalilndeeradxiwidaippeu
+payirmeelaanxmai Q40 ndanjjaiyilseetxrxuwayalilndeeradxiwidaippeu
+muntayaarippeu Q41 puzhudiwidaittamaanaawaarindel
+payirmeelaanxmai Q42 puzhudiwidaittamaanaawaarindel
+muntayaarippeu Q43 maanaawaarimeetxtxeukkaalndel
+payirmeelaanxmai Q44 maanaawaarimeetxtxeukkaalndel
+muntayaarippeu Q45 pagudipaasanasaagubadximurxai
+payirmeelaanxmai Q46 pagudipaasanasaagubadximurxai
+muntagawal Q47 seyalpaadxugalx
+payirndadxaweu Q48 seyalpaadxugalx
+payirmeelaanxmai Q49 seyalpaadxugalx
+kalxaindiikkam  seyalpaadxugalx
+
+
+karumbeu Q80
+ndadxaweuwayaltayaarippeu Q81 karumbeu
+uram Q82 karumbeu
+ndadxaweuwayalparaamarippeu Q83 karumbeu
+tazhaiccatteuseemippeu Q84 karumbeu
+ndunxnxuutxtxaccatteu Q85 karumbeu
+ndiirndirwaagam Q86 karumbeu
+edirpaaraasuuzhndilai Q87 karumbeu
+arxuwadxai Q88 karumbeu
+matxrxawai Q89 karumbeu
+
+raagi Q100
+widai Q101 raagi
+ndadxaweuwayaltayaarippeu Q102 raagi
+pradaanandilandirwaagam Q103 raagi
+arxuwadxai Q104 raagi
+maanaawaari Q105 raagi
+uram Q106 raagi
+payiridxummurxaigalx Q107 raagi

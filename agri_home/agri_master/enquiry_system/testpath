@@ -1,0 +1,4 @@
+#!/bin/tcsh
+set PATH = "/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/jjoysingh/.local/bin:/home/jjoysingh/bin:/home/jjoysingh/speech/speech_tools/bin:/home/jjoysingh/Android/Sdk:/home/jjoysingh/Android/Sdk/tools:/home/jjoysingh/Android/Sdk/platform-tools:/home/jjoysingh/kaldi-trunk/tools/srilm-1.6.0/bin/i686:/home/jjoysingh/kaldi-trunk/tools/srilm-1.6.0/bin:/usr/local/MATLAB/R2016a/bin"
+# ulimit -a
+scripts/complete "நீங்கள் எந்த பயிரை பற்றி அறிய விரும்புகுறீர்கள்"

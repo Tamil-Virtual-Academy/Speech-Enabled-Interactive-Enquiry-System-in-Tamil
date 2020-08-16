@@ -1,0 +1,4 @@
+scripts/Makefile
+Line 87 
+Changed for loop. Used 1.utt instead of *.utt
+**********

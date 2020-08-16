@@ -1,0 +1,30 @@
+VERSION=1.0
+N=11   L=17   
+I=0    W=SIL                 
+I=1    W=ularttudal          
+I=2    W=!NULL               
+I=3    W=seemippeu           
+I=4    W=mudalarxuwadxai     
+I=5    W=kadiradxittal       
+I=6    W=iranxdxaamarxuwadxai 
+I=7    W=arxuwadxaiyaitiirmaanittal 
+I=8    W=SIL                 
+I=9    W=!NULL               
+I=10   W=!NULL               
+J=0     S=0    E=0    
+J=1     S=2    E=0    
+J=2     S=8    E=1    
+J=3     S=1    E=2    
+J=4     S=3    E=2    
+J=5     S=4    E=2    
+J=6     S=5    E=2    
+J=7     S=6    E=2    
+J=8     S=7    E=2    
+J=9     S=8    E=3    
+J=10    S=8    E=4    
+J=11    S=8    E=5    
+J=12    S=8    E=6    
+J=13    S=8    E=7    
+J=14    S=8    E=8    
+J=15    S=10   E=8    
+J=16    S=0    E=9    

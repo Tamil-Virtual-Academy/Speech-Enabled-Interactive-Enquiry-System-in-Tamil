@@ -1,0 +1,99 @@
+VERSION=1.0
+N=34   L=63   
+I=0    W=SIL                 
+I=1    W=siwaganggai         
+I=2    W=!NULL               
+I=3    W=ndaagappatxtxinam   
+I=4    W=tirucci             
+I=5    W=welxlxuur           
+I=6    W=wizhuppuram         
+I=7    W=wirudundagar        
+I=8    W=raamandaadapuram    
+I=9    W=madurai             
+I=10   W=perambaluur         
+I=11   W=pudeukkootxtxai     
+I=12   W=teenii              
+I=13   W=tuutteukkudxi       
+I=14   W=tiruwaaruur         
+I=15   W=tiruwalxlxuur       
+I=16   W=tiruwanxnxaamalai   
+I=17   W=tirundelweeli       
+I=18   W=tirucciraappalxlxi  
+I=19   W=dinxdxeukkal        
+I=20   W=darumaburi          
+I=21   W=tanjjaawuur         
+I=22   W=seelam              
+I=23   W=kooyambuttuur       
+I=24   W=kuudxaluur          
+I=25   W=krisxnxagiri        
+I=26   W=kaanjjipuram        
+I=27   W=kanniyaakumari      
+I=28   W=karuur              
+I=29   W=udagai              
+I=30   W=iiroodxeu           
+I=31   W=SIL                 
+I=32   W=!NULL               
+I=33   W=!NULL               
+J=0     S=0    E=0    
+J=1     S=2    E=0    
+J=2     S=31   E=1    
+J=3     S=1    E=2    
+J=4     S=3    E=2    
+J=5     S=4    E=2    
+J=6     S=5    E=2    
+J=7     S=6    E=2    
+J=8     S=7    E=2    
+J=9     S=8    E=2    
+J=10    S=9    E=2    
+J=11    S=10   E=2    
+J=12    S=11   E=2    
+J=13    S=12   E=2    
+J=14    S=13   E=2    
+J=15    S=14   E=2    
+J=16    S=15   E=2    
+J=17    S=16   E=2    
+J=18    S=17   E=2    
+J=19    S=18   E=2    
+J=20    S=19   E=2    
+J=21    S=20   E=2    
+J=22    S=21   E=2    
+J=23    S=22   E=2    
+J=24    S=23   E=2    
+J=25    S=24   E=2    
+J=26    S=25   E=2    
+J=27    S=26   E=2    
+J=28    S=27   E=2    
+J=29    S=28   E=2    
+J=30    S=29   E=2    
+J=31    S=30   E=2    
+J=32    S=31   E=3    
+J=33    S=31   E=4    
+J=34    S=31   E=5    
+J=35    S=31   E=6    
+J=36    S=31   E=7    
+J=37    S=31   E=8    
+J=38    S=31   E=9    
+J=39    S=31   E=10   
+J=40    S=31   E=11   
+J=41    S=31   E=12   
+J=42    S=31   E=13   
+J=43    S=31   E=14   
+J=44    S=31   E=15   
+J=45    S=31   E=16   
+J=46    S=31   E=17   
+J=47    S=31   E=18   
+J=48    S=31   E=19   
+J=49    S=31   E=20   
+J=50    S=31   E=21   
+J=51    S=31   E=22   
+J=52    S=31   E=23   
+J=53    S=31   E=24   
+J=54    S=31   E=25   
+J=55    S=31   E=26   
+J=56    S=31   E=27   
+J=57    S=31   E=28   
+J=58    S=31   E=29   
+J=59    S=31   E=30   
+J=60    S=31   E=31   
+J=61    S=33   E=31   
+J=62    S=0    E=32   

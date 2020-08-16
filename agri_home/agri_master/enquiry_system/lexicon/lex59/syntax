@@ -1,0 +1,3 @@
+$sil = SIL;
+$kw = mazhai | panxpadxuttudal | paruwakaalam | widaikadxinamaakkudal | widaindadxaweu | widaiwiidam;
+(<$sil> ($kw) <$sil>)

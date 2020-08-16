@@ -1,0 +1,171 @@
+VERSION=1.0
+N=58   L=111  
+I=0    W=!NULL               
+I=1    W=!NULL               
+I=2    W=bawaani             
+I=3    W=!NULL               
+I=4    W=eeesdxipadinaarxeu  
+I=5    W=eeesdxipadineezheu  
+I=6    W=eeesdxipadinetxtxeu 
+I=7    W=eeesdxipattonxbateu 
+I=8    W=eeesdxiirubadeu     
+I=9    W=eeesdximuppattiyeezheu 
+I=10   W=eeesdxindaappattirenxdxeu 
+I=11   W=eedxitxiiaarndaappattindaaleu 
+I=12   W=eedxitxiiaarndaappattianjjeu 
+I=13   W=eedxitxiiaarheconneu 
+I=14   W=eedxitxiimuppattiaarxeu 
+I=15   W=eedxitxiimuppattiyeezheu 
+I=16   W=eedxitxiimuppattiyetxtxeu 
+I=17   W=eedxitxiimuppattiyonbadeu 
+I=18   W=eedxitxiindaappadeu 
+I=19   W=eedxitxiindaappattirenxdxeu 
+I=20   W=eedxitxiindaappattimuunxeu 
+I=21   W=eedxitxiindaappattianjjeu 
+I=22   W=eedxitxiiaarndaappattindaaleu 
+I=23   W=eedxitxiiaarndaappattianjjeu 
+I=24   W=eedxitxiiaarndaappattiaarxeu 
+I=25   W=eedxitxiiaarndaappattiyeezheu 
+I=26   W=eedxitxiiaarndaappattiyetxtxeu 
+I=27   W=eedxitxiiaaraaronneu 
+I=28   W=eedxitxiiaarheconneu 
+I=29   W=emdxiyuumuunxeu     
+I=30   W=emdxiyuundaaleu     
+I=31   W=emdxiyuuanjjeu      
+I=32   W=eeesdxipadineezheu  
+I=33   W=eeesdxipadinetxtxeu 
+I=34   W=aiaarirubadeu       
+I=35   W=aiaarmuppattiaarxeu 
+I=36   W=aiaarambadeu        
+I=37   W=aiaararuwattinaaleu 
+I=38   W=koondaappattirenxdxeu 
+I=39   W=koondaappattimuunxeu 
+I=40   W=koondaappattianjjeu 
+I=41   W=koondaappattiaarxeu 
+I=42   W=koondaappattiyeezheu 
+I=43   W=kooaarhecrenxdxeu   
+I=44   W=txiaarwaionneu      
+I=45   W=txiaarwaiaarrenxdxeu 
+I=46   W=txikeeempatteu      
+I=47   W=txikeeempadinonneu  
+I=48   W=txikeeemaarpanirenxdxeu 
+I=49   W=txipiesrenxdxeu     
+I=50   W=txipiesmuunxeu      
+I=51   W=piemkeerenxdxeu     
+I=52   W=piemkeeaarmuunxeu   
+I=53   W=piemkeeaarhecmuunxeu 
+I=54   W=piwaindaaleu        
+I=55   W=ponmani             
+I=56   W=paiyuuronneu        
+I=57   W=welxlxaipponni      
+J=0     S=3    E=1    
+J=1     S=0    E=2    
+J=2     S=2    E=3    
+J=3     S=4    E=3    
+J=4     S=5    E=3    
+J=5     S=6    E=3    
+J=6     S=7    E=3    
+J=7     S=8    E=3    
+J=8     S=9    E=3    
+J=9     S=10   E=3    
+J=10    S=11   E=3    
+J=11    S=12   E=3    
+J=12    S=13   E=3    
+J=13    S=14   E=3    
+J=14    S=15   E=3    
+J=15    S=16   E=3    
+J=16    S=17   E=3    
+J=17    S=18   E=3    
+J=18    S=19   E=3    
+J=19    S=20   E=3    
+J=20    S=21   E=3    
+J=21    S=22   E=3    
+J=22    S=23   E=3    
+J=23    S=24   E=3    
+J=24    S=25   E=3    
+J=25    S=26   E=3    
+J=26    S=27   E=3    
+J=27    S=28   E=3    
+J=28    S=29   E=3    
+J=29    S=30   E=3    
+J=30    S=31   E=3    
+J=31    S=32   E=3    
+J=32    S=33   E=3    
+J=33    S=34   E=3    
+J=34    S=35   E=3    
+J=35    S=36   E=3    
+J=36    S=37   E=3    
+J=37    S=38   E=3    
+J=38    S=39   E=3    
+J=39    S=40   E=3    
+J=40    S=41   E=3    
+J=41    S=42   E=3    
+J=42    S=43   E=3    
+J=43    S=44   E=3    
+J=44    S=45   E=3    
+J=45    S=46   E=3    
+J=46    S=47   E=3    
+J=47    S=48   E=3    
+J=48    S=49   E=3    
+J=49    S=50   E=3    
+J=50    S=51   E=3    
+J=51    S=52   E=3    
+J=52    S=53   E=3    
+J=53    S=54   E=3    
+J=54    S=55   E=3    
+J=55    S=56   E=3    
+J=56    S=57   E=3    
+J=57    S=0    E=4    
+J=58    S=0    E=5    
+J=59    S=0    E=6    
+J=60    S=0    E=7    
+J=61    S=0    E=8    
+J=62    S=0    E=9    
+J=63    S=0    E=10   
+J=64    S=0    E=11   
+J=65    S=0    E=12   
+J=66    S=0    E=13   
+J=67    S=0    E=14   
+J=68    S=0    E=15   
+J=69    S=0    E=16   
+J=70    S=0    E=17   
+J=71    S=0    E=18   
+J=72    S=0    E=19   
+J=73    S=0    E=20   
+J=74    S=0    E=21   
+J=75    S=0    E=22   
+J=76    S=0    E=23   
+J=77    S=0    E=24   
+J=78    S=0    E=25   
+J=79    S=0    E=26   
+J=80    S=0    E=27   
+J=81    S=0    E=28   
+J=82    S=0    E=29   
+J=83    S=0    E=30   
+J=84    S=0    E=31   
+J=85    S=0    E=32   
+J=86    S=0    E=33   
+J=87    S=0    E=34   
+J=88    S=0    E=35   
+J=89    S=0    E=36   
+J=90    S=0    E=37   
+J=91    S=0    E=38   
+J=92    S=0    E=39   
+J=93    S=0    E=40   
+J=94    S=0    E=41   
+J=95    S=0    E=42   
+J=96    S=0    E=43   
+J=97    S=0    E=44   
+J=98    S=0    E=45   
+J=99    S=0    E=46   
+J=100   S=0    E=47   
+J=101   S=0    E=48   
+J=102   S=0    E=49   
+J=103   S=0    E=50   
+J=104   S=0    E=51   
+J=105   S=0    E=52   
+J=106   S=0    E=53   
+J=107   S=0    E=54   
+J=108   S=0    E=55   
+J=109   S=0    E=56   
+J=110   S=0    E=57   

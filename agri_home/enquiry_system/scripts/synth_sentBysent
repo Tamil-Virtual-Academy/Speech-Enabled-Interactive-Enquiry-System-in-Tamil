@@ -1,0 +1,28 @@
+#!/bin/tcsh -f
+
+if ($# != 1) then
+	echo "arg1 - file to be synthesised - answer_list"
+	exit(-1)
+endif
+
+set start = 1
+set end = `cat $1 | wc -l`
+while ($start <= 1) #$end)
+set ans = `cat $1 | head -$start | tail -1 | cut -d "-" -f2`
+echo $ans > temp
+
+#set sentence = `cat temp | head -$start1 | tail -1 | cut -d "." 
+set start1 = 1
+#set sentence_count = `grep -o [.'\n'] temp | wc -l`
+grep -o [.] temp | wc -l > sentence
+#echo $sentence_count
+#while($start1 <= 2) #$sentence_count)
+#set line = `cat temp | head -$start1 | tail -1 |cut -d "." -f$start1`
+
+
+#./parallel_trial/process text & ./parallel_trial/play file
+
+#@ start1++
+#end
+@ start++
+end

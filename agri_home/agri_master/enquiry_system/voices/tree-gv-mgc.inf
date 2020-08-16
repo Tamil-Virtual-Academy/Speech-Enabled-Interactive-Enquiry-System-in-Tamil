@@ -1,0 +1,13 @@
+QS Num-Syls_in_Utterance<=11 { "*/J:?+*","*/J:10+*","*/J:11+*" }
+QS Num-Syls_in_Utterance<=17 { "*/J:?+*","*/J:10+*","*/J:11+*","*/J:12+*","*/J:13+*","*/J:14+*","*/J:15+*","*/J:16+*","*/J:17+*" }
+QS Num-Syls_in_Utterance<=27 { "*/J:?+*","*/J:1?+*","*/J:20+*","*/J:21+*","*/J:22+*","*/J:23+*","*/J:24+*","*/J:25+*","*/J:26+*","*/J:27+*" }
+QS Num-Words_in_Utterance<=11 { "*+?-*","*+10-*","*+11-*" }
+
+{*}[2]
+{
+   0 Num-Syls_in_Utterance<=17                          -1         -2    
+  -1 Num-Words_in_Utterance<=11                          "gv_mgc_1"      -3    
+  -2 Num-Syls_in_Utterance<=11                           "gv_mgc_3"       "gv_mgc_2" 
+  -3 Num-Syls_in_Utterance<=27                           "gv_mgc_5"       "gv_mgc_4" 
+}
+

@@ -1,0 +1,60 @@
+VERSION=1.0
+N=21   L=37   
+I=0    W=SIL                 
+I=1    W=patteu              
+I=2    W=!NULL               
+I=3    W=panirenxdxeu        
+I=4    W=padinonrxeu         
+I=5    W=padinainddeu        
+I=6    W=padinaankeu         
+I=7    W=padimuunrxeu        
+I=8    W=onrxeu              
+I=9    W=onbadeu             
+I=10   W=ndaangeu            
+I=11   W=muunrxeu            
+I=12   W=kadxaisi            
+I=13   W=iranxdxeu           
+I=14   W=etxtxeu             
+I=15   W=eezheu              
+I=16   W=ainddeu             
+I=17   W=aarxeu              
+I=18   W=SIL                 
+I=19   W=!NULL               
+I=20   W=!NULL               
+J=0     S=0    E=0    
+J=1     S=2    E=0    
+J=2     S=18   E=1    
+J=3     S=1    E=2    
+J=4     S=3    E=2    
+J=5     S=4    E=2    
+J=6     S=5    E=2    
+J=7     S=6    E=2    
+J=8     S=7    E=2    
+J=9     S=8    E=2    
+J=10    S=9    E=2    
+J=11    S=10   E=2    
+J=12    S=11   E=2    
+J=13    S=12   E=2    
+J=14    S=13   E=2    
+J=15    S=14   E=2    
+J=16    S=15   E=2    
+J=17    S=16   E=2    
+J=18    S=17   E=2    
+J=19    S=18   E=3    
+J=20    S=18   E=4    
+J=21    S=18   E=5    
+J=22    S=18   E=6    
+J=23    S=18   E=7    
+J=24    S=18   E=8    
+J=25    S=18   E=9    
+J=26    S=18   E=10   
+J=27    S=18   E=11   
+J=28    S=18   E=12   
+J=29    S=18   E=13   
+J=30    S=18   E=14   
+J=31    S=18   E=15   
+J=32    S=18   E=16   
+J=33    S=18   E=17   
+J=34    S=18   E=18   
+J=35    S=20   E=18   
+J=36    S=0    E=19   

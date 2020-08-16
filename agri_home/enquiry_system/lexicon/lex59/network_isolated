@@ -1,0 +1,24 @@
+VERSION=1.0
+N=9    L=13   
+I=0    W=!NULL               
+I=1    W=!NULL               
+I=2    W=mazhai              
+I=3    W=!NULL               
+I=4    W=panxpadxuttudal     
+I=5    W=paruwakaalam        
+I=6    W=widaikadxinamaakkudal 
+I=7    W=widaindadxaweu      
+I=8    W=widaiwiidam         
+J=0     S=3    E=1    
+J=1     S=0    E=2    
+J=2     S=2    E=3    
+J=3     S=4    E=3    
+J=4     S=5    E=3    
+J=5     S=6    E=3    
+J=6     S=7    E=3    
+J=7     S=8    E=3    
+J=8     S=0    E=4    
+J=9     S=0    E=5    
+J=10    S=0    E=6    
+J=11    S=0    E=7    
+J=12    S=0    E=8    

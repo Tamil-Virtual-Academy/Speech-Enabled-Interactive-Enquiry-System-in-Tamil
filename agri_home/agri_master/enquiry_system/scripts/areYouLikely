@@ -1,0 +1,9 @@
+#!/bin/tcsh -f 
+
+if ($# != 1) then
+	echo "arg - recog_out"
+	exit(-1)
+endif
+
+set recog_kw_likelihood = `cat lists/recog_out | grep -v SIL |grep -v gw|head -3|tail -1 |cut -d " " -f4 | cut -d "-" -f2`
+

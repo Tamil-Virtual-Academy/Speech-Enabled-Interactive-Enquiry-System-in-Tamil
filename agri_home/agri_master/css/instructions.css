@@ -1,0 +1,9 @@
+/*Styles for the XML file*/
+.v_list {
+  display: block;
+  font-weight: bold;
+  font-size: 120%;
+  color: #32332E;
+  text-shadow: 1px 1px 1px #32332E;
+  /*background-color: #FEFFE6*/
+}

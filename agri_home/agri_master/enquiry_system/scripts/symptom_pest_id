@@ -1,0 +1,24 @@
+#!/bin/tcsh -f
+
+if ($# != 4) then
+	echo "arg1 - questions-recognizer map"
+    echo "arg2 - questions list"
+	echo "arg3 - part of the plant or stage of the insect"
+	echo "arg4 - number map"
+	exit(-1)
+endif
+
+set folder = images/$3/
+#firefox html_pages/$3.html &
+cp images/$3/* ../images/cropimages
+echo 104 > ../tasker.txt
+
+sleep 1
+
+./scripts/synth_recog $1 $2 Q6
+set keyword = `cat keyword`
+
+set num = `grep -w $keyword $4 |cut -d " " -f2`
+ls $folder |head -$num |tail -1 |cut -d "." -f1 > keyword
+echo 105 > ../tasker.txt
+sleep 1

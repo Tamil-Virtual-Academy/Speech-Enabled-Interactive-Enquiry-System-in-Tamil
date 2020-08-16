@@ -1,0 +1,19 @@
+#!/bin/tcsh -f
+
+if ($# != 1) then
+	echo "arg --> text"
+	exit (-1)
+endif
+rm prompt-utt/*
+
+set num_lines = `cat $1 |wc -l`
+set start = 1
+
+while ($start <= $num_lines)
+	set txt = `cat $1|head -$start |tail -1`
+	echo $txt
+	./scripts/complete "$txt" lilly_voice
+	mv wav/1.wav ../speaker_adaptation/tamil_speaker_adapt/GMM/lil/lil_$start.wav
+
+@ start++
+end

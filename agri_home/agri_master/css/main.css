@@ -1,0 +1,129 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 40px;
+  /*color: #654D03;*/
+  color: #FEFFE6;
+  text-shadow: 2px 2px 6px #32332E;
+  /*background-color: #FEFFE6;*/
+  width: 950px;
+  height: 50px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.bottom_aligner {
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+    width: 0px;
+}
+
+th {
+  font-size: 30px;
+  line-height: 40px;
+  color: #32332E;
+}
+
+.record tr {
+    text-align: center;
+}
+
+canvas {
+		display: inline-block;
+		background: #32332E;
+		width: 25%;
+    height: 75px;
+		box-shadow: 0px 0px 10px #32332E;
+	}
+
+.recording_area {
+  background-color: #FEFFE6;
+}
+
+.wbuttons {
+  background-color: #630918;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  color: white;
+  padding: 10px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.wbuttons:hover, .smallbutton:hover {
+    background-color: #FBF2DF;
+    color: black;
+    border: 2px solid #630918;
+}
+
+.smallbutton {
+  background-color: #630918;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  /*top:0px;*/
+  position:absolute;
+}
+
+.testbutton {
+  background-color: #630918;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  color: white;
+  padding: 7px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+img.images {
+    width: 150px;
+    height: 150px;
+    border: 5px solid #FBF2DF;
+    -webkit-transition: width 0.5s, height 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s, height 0.5s;
+    -webkit-transition-delay: 0.5s; /* Safari */
+    transition-delay: 0.4s;
+}
+
+img.images:hover {
+    width: 400px;
+    height: 400px;
+}
+
+.imagegrid {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

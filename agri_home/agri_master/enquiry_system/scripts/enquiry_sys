@@ -1,0 +1,245 @@
+#!/bin/tcsh
+
+if ($# != 8) then
+	echo "arg1 - questions-recognition map" #synth_recog - questions and lexicon, ques_rec_map
+	echo "arg2 - questions list" #synth_recog - question number and question, questions_list
+
+	echo "arg3 - answers map"  #synth_answer - keyword and answer number, ans_map
+	echo "arg4 - answers list" #synth_answer - answer number and answer, answers_list
+	echo "arg5 - answers list 2" #synth_answer - to extend the answer, answers_list_ext
+
+	echo "arg6 - number map" #number_map
+	echo "arg7 - keyword - transliterated to utf8 map" #english-tamil map, kw_trans_utf8
+	echo "arg8 - ans ques map"
+	exit(-1)
+endif
+
+#INITIALIZE
+rm -f ../wav/test.wav
+echo 100 > ../tasker.txt
+echo "" > ../question.txt
+echo "" > ../answer.txt
+set prev_keyword = ""
+set prev_keyword_2 = ""
+
+#START
+set ques = QA
+./scripts/synth_recog $1 $2 $ques
+set keyword = `cat keyword`
+
+#NEL
+if ($keyword == ndel) then
+	set ques = Q11
+	./scripts/synth_recog $1 $2 $ques
+	set keyword = `cat keyword`
+	if ($keyword == payirpaadugaappeu) then
+		#rice protection branch
+		set ques = Q1
+		./scripts/synth_recog $1 $2 $ques
+		set keyword = `cat keyword`
+
+		if ($keyword == aam) then
+			set ques = Q2 #உங்க பயிர  தாக்கி இருக்கிறது பூச்சியா, நோயா இல்ல புழுவா
+			./scripts/synth_recog $1 $2 $ques
+			set keyword = `cat keyword`
+
+			if ($keyword == ndooy) then #only two branches, D or I/P
+				set ques = Q4 #அந்த நோயோட பெயர் என்ன
+			else
+				set ques = Q3 #அந்த பூச்சி அல்லது புழுவோட பெயர் என்ன
+			endif
+
+			./scripts/synth_recog $1 $2 $ques
+		        set keyword = `cat keyword`
+		    echo 103 > ../tasker.txt
+		    sleep 1
+			./scripts/synth_answer $keyword $3 $4 $prev_keyword $prev_keyword_2
+
+			echo 107 > ../tasker.txt
+			sleep 1
+			#additional information
+			set keyword1 = `cat keyword`
+			./scripts/synth_recog $1 $2 Q8 #மேலும் பூச்சியின் விபரம் மற்றும் தாக்குதலின் அறிகுறிகள்
+			set keyword = `cat keyword`
+
+			echo 103 > ../tasker.txt
+			if ($keyword == aam) then #for more information
+				./scripts/synth_answer $keyword1 $3 $5 $prev_keyword $prev_keyword_2
+			endif
+
+		else
+
+			set ques = Q1a #உங்க பயிர தாக்கி இருக்கிற பூச்சிய நீங்க பாத்திருக்கீங்களா
+			./scripts/synth_recog $1 $2 $ques
+		        set keyword = `cat keyword`
+
+			if ($keyword == aam) then
+				set ques = Q7 #நீங்க பார்த்த பூச்சி அல்லது புழு இப்போ எந்த நிலைல இருக்குது, முட்டையா, புழுவா, இளம் பூச்சியா,  அல்லது பூச்சியா
+			else
+				set ques = Q5 #உங்க பயிர்ல பாதிக்கப்பட்ட பகுதி, தண்டா, இலையா, மணிகளா, உறையா, கணுவா, கழுத்தா, கதிரா
+			endif
+
+			./scripts/synth_recog $1 $2 $ques
+		        set keyword = `cat keyword`
+			./scripts/symptom_pest_id $1 $2 $keyword $6
+			set keyword = `cat keyword`
+			set kw_utf8 = `grep -w $keyword $7 |cut -d " " -f2-`
+
+			set kw_utf8_ans = "உங்க பயிர தாக்கி இருக்கிறது $kw_utf8 ஆக இருக்கலாம் என்று யூகிக்கிறோம். இதற்கான கட்டுப்படுத்தும் முறைகளை தெரிந்துகொள்ள சிறிது நேரம் காத்திருக்கவும்."
+			echo $kw_utf8_ans > ../question.txt
+			echo 101 > ../tasker.txt
+
+			./scripts/complete "உங்க பயிர தாக்கி இருக்கிறது $kw_utf8 ஆக இருக்கலாம் என்று யூகிக்கிறோம். இதற்கான கட்டுப்படுத்தும் முறைகளை தெரிந்துகொள்ள சிறிது நேரம் காத்திருக்கவும்."
+			./scripts/synth_answer $keyword $3 $4 $prev_keyword $prev_keyword_2
+
+			echo 107 > ../tasker.txt
+			sleep 1
+
+			#additional information
+			set keyword1 = `cat keyword`
+			./scripts/synth_recog $1 $2 Q8 #மேலும் பூச்சியின் விபரம் மற்றும் தாக்குதலின் அறிகுறிகள்
+			set keyword = `cat keyword`
+
+			if ($keyword == aam) then
+				./scripts/synth_answer $keyword1 $3 $5 $prev_keyword $prev_keyword_2
+			endif
+		endif
+
+	else
+		#rice production branch
+		# set ques = Q12 #district
+		# ./scripts/synth_recog $1 $2 $ques
+		# set district = `cat keyword`
+		set prev_keyword_2 = $prev_keyword
+		set prev_keyword = $keyword
+		set ques = Q13 #payirsaagubadi branchout
+		./scripts/synth_recog $1 $2 $ques
+		set keyword = `cat keyword`
+
+		while ( $ques != "" )
+			if ( `cat lists/ans_ques | cut -d " " -f1 | grep -w $keyword | wc -l` > 1 ) then
+				set ques = `grep -w $keyword lists/ans_ques | grep -w $prev_keyword | cut -d " " -f2`
+				if ( $ques != "" ) then
+					set prev_keyword_2 = $prev_keyword
+					set prev_keyword = $keyword
+					./scripts/synth_recog $1 $2 $ques
+					set keyword = `cat keyword`
+				endif
+			else
+				set ques = `cat lists/ans_ques | cut -d " " -f1-2 | grep -w $keyword | cut -d " " -f2`
+				if ( $ques != "" ) then
+					set prev_keyword_2 = $prev_keyword
+					set prev_keyword = $keyword
+					./scripts/synth_recog $1 $2 $ques
+					set keyword = `cat keyword`
+				endif
+			endif
+			#set prev_ques = $ques
+		end
+		echo 103 > ../tasker.txt
+		sleep 1
+		./scripts/synth_answer $keyword $3 $4 $prev_keyword $prev_keyword_2
+
+	endif
+
+#KARUMBU
+else if($keyword == karumbeu) then
+	set prev_keyword_2 = $prev_keyword
+	set prev_keyword = $keyword
+	set ques = Q80 #karumbeu branchout
+	./scripts/synth_recog $1 $2 $ques
+	set keyword = `cat keyword`
+
+	while ( $ques != "" )
+		if ( `cat lists/ans_ques | cut -d " " -f1 | grep -w $keyword | wc -l` > 1 ) then
+			set ques = `grep -w $keyword lists/ans_ques | grep -w $prev_keyword | cut -d " " -f2`
+			if ( $ques != "" ) then
+				set prev_keyword_2 = $prev_keyword
+				set prev_keyword = $keyword
+				./scripts/synth_recog $1 $2 $ques
+				set keyword = `cat keyword`
+			endif
+		else
+			set ques = `cat lists/ans_ques | cut -d " " -f1-2 | grep -w $keyword | cut -d " " -f2`
+			if ( $ques != "" ) then
+				set prev_keyword_2 = $prev_keyword
+				set prev_keyword = $keyword
+				./scripts/synth_recog $1 $2 $ques
+				set keyword = `cat keyword`
+			endif
+		endif
+		#set prev_ques = $ques
+	end
+	echo 103 > ../tasker.txt
+	sleep 1
+	./scripts/synth_answer $keyword $3 $4 $prev_keyword $prev_keyword_2
+
+#RAAGI
+else if($keyword == raagi) then
+	set prev_keyword_2 = $prev_keyword
+	set prev_keyword = $keyword
+	set ques = Q100 #raagi branchout
+	./scripts/synth_recog $1 $2 $ques
+	set keyword = `cat keyword`
+
+	while ( $ques != "" )
+		if ( `cat lists/ans_ques | cut -d " " -f1 | grep -w $keyword | wc -l` > 1 ) then
+			set ques = `grep -w $keyword lists/ans_ques | grep -w $prev_keyword | cut -d " " -f2`
+			if ( $ques != "" ) then
+				set prev_keyword_2 = $prev_keyword
+				set prev_keyword = $keyword
+				./scripts/synth_recog $1 $2 $ques
+				set keyword = `cat keyword`
+			endif
+		else
+			set ques = `cat lists/ans_ques | cut -d " " -f1-2 | grep -w $keyword | cut -d " " -f2`
+			if ( $ques != "" ) then
+				set prev_keyword_2 = $prev_keyword
+				set prev_keyword = $keyword
+				./scripts/synth_recog $1 $2 $ques
+				set keyword = `cat keyword`
+			endif
+		endif
+		#set prev_ques = $ques
+	end
+	echo 103 > ../tasker.txt
+	sleep 1
+	./scripts/synth_answer $keyword $3 $4 $prev_keyword $prev_keyword_2
+
+endif
+
+#FINSIH
+echo 103 > ../tasker.txt
+sleep 1
+set finish = "எங்கள் சேவையை உபயோகித்தமைக்கு நன்றி. நீங்கள் முதல் நிலைக்கு திருப்பப்படுகிறீர்கள்."
+echo $finish > ../question.txt
+echo 101 > ../tasker.txt
+./scripts/complete "எங்கள் சேவையை உபயோகித்தமைக்கு நன்றி. நீங்கள் முதல் நிலைக்கு திருப்பப்படுகிறீர்கள்."
+sleep 1
+
+#CLEANUP
+echo 105 > ../tasker.txt
+sleep 2
+echo 103 > ../tasker.txt
+sleep 2
+echo 111 > ../tasker.txt
+sleep 2
+echo 100 > ../tasker.txt
+echo "" > ../question.txt
+echo "" > ../answer.txt
+rm -f ../images/cropimages/*
+
+
+#NOTES
+#101 Load Question
+#102 Load Answer
+#103 Clear Q and A
+#104 Load Images
+#105 Clear Images
+#106 Clear Question
+#107 Clear Answer
+#201 Recording Process
+#202 Playback synthesized wave file
+#111 Go Back to first page
+#110 Start the Process
+#210 Done reading the answer or, complete script done

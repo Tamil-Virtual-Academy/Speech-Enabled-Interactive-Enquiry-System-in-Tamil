@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/xmlstyle.css">
+  <!-- <link href="styles.css" rel="stylesheet" type="text/css" media="screen"> -->
+  <title>விவசாயிகள் சேவை மையம்</title>
+
+  <script src="js/audiodisplay.js"></script>
+  <script src="js/recorderjs/recorder.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contentloader.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> -->
+  <script src="jquery-3.0.0.js"></script>
+
+  <script type="text/javascript">
+  function synthplay(tag){
+    document.getElementById(tag).play();
+  // return true;
+  }
+
+  function changeImage(a) {
+    document.getElementById("record").src=a;
+  }
+
+  // function playaudiofile(audiofile){
+  //   var synth = new Audio(audiofile);
+  //   synth.play();
+  // }
+
+  // window.onload = startenq();
+  // window.onload = $.post( "startenquiry.php" );
+  window.onload = probeTasker();
+  // window.onload = startenq();
+  // window.onload = execphp('110');
+
+  </script>
+</head>
+
+<body>
+<center><h1>விவசாயம் சார்ந்த தகவல் அறியும் வலைத்தளம்</h1></center>
+
+  <div class="canvas_area"><center>
+    <!-- <canvas id="analyser"></canvas> -->
+    <!-- <canvas id="wavedisplay"></canvas> -->
+  </center></div>
+
+  <center>
+        <!-- <table style="width:50%" class="record">
+            <tr>
+              <th>கேட்க</th>
+              <th>தேடல்</th>
+            </tr>
+            <tr>
+              <td>
+                <audio id="audio1" src="wav/ask.wav"></audio>
+
+                <a><img id="record" src="images/micmute.png" alt="startrecord" height="60" width="60" onClick="toggleRecording(this)"/></a>
+              </td>
+              <td>
+                <audio id="audio2" src="wav/thanks.wav"></audio>
+                <a id="save" onclick="play1()" href="#dynamictext"> <img src="images/index.jpg" height="50" width="50"/></a>
+              </td>
+            </tr>
+          </table> -->
+          <p id="record" onClick="toggleRecording(this)"/></p>
+          <div id="audioholder"></div>
+          <!-- <div id="audioholder"><audio id="synthaudio" src="wav/1_150552.wav"></audio></div> -->
+          <!-- <audio id="synthaudio" src="wav/1_150552.wav"></audio> -->
+          <audio id="testaudio" src="wav/1.wav"></audio>
+          <audio id="chime" src="wav/chime.wav"></audio>
+          <!-- <center><img onclick="loadDoc()"src="images/View_Details.png" height="60" width="60"/><div id="dynamictext"> </div></center> -->
+          <div id="questionanswer" style="background-color:rgba(246,223,177, 0.3);">
+              <div id="question" class="quest"></div>
+              <div id="answer" class="answer"></div>
+              <div id="imagegridtable"></div>
+          </div>
+          <div id="test"></div>
+          <!-- <a onclick="loadDoc('question.txt', 'question')" class="testbutton">Fill Question</a><br>
+          <a onclick="loadDoc('tasker.txt', 'answer')" class="testbutton">Fill Answer</a><br>
+          <a onclick="probeTasker()" class="testbutton">Spill Doc</a><br>
+          <a onclick="clearDiv('question'), clearDiv('answer')" class="testbutton">Clear QA</a><br>
+          <a onclick="execphp()" class="testbutton">Get some Php data</a><br>
+          <a onclick="imageloader('image_')" class="testbutton">Get Some Images</a>
+          <a onclick="clearimages()" class="testbutton">Clear Images</a> -->
+          <!-- <a onclick="probeTasker()" class="testbutton">Spill Doc</a><br> -->
+          <table class="howto_link">
+            <tr>
+              <!-- <td><a href="welcome.html" class="smallbutton" style="left:0px; top:0px">பின் செல்ல</a></td> -->
+              <!-- <td><a onclick="execphp('130')" class="smallbutton" style="right:0px; top:0px">மீண்டும் முயற்சிக்க</a></td> -->
+              <!-- <td><a onclick="execphp('130')" class="smallbutton" style="right:0px; top:0px">Test Button</a></td> -->
+            </tr>
+        </table>
+        <!-- <td><a onclick="execphp('120')" class="smallbutton" style="bottom:0px">நிறுத்த</a></td> -->
+        <!-- <div id="instructionstext" style="background-color:rgba(246,223,177, 0.3);"></div> -->
+    </center>
+    <div id="taskathand" style="bottom:15px; right:0px; position:fixed; color:white; font-size:50%">Uninitialized</div><br>
+    <div id="previoustask" style="bottom:0px; right:0px; position:fixed; color:white; font-size:50%">Uninitialized</div>
+</body>
+
+</html>

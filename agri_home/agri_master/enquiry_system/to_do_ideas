@@ -1,0 +1,54 @@
+****************
+date:10/03
+trigger script first empties the start.txt
+we need to remove trigger script
+Trigger enquiry system when window loads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****************
+
+
+Change answers map name
+add all words to answers map
+Add all answers to answers list
+
+
+unified approach for production
+	answer question map - progress
+	update answer map - keyword and answer - progress
+	loop until there are no questions for the answers. - done
+	if there is a conflict in answers, compare previous question - done in code
+
+
+"நாற்றங்கால் மேலாண்மை" > "விதை" > "விதை தரம்" > "தேவைகள்"
+சாகுபடிச்சூழல்கள் > "மானாவாரி முறை" > "புழுதி விதைத்த மானாவாரி நெல்" > முன் தயாரிப்பு > "நிலம் தயாரித்தல்"
+
+payir saagubadi > naatrangal melanmai > vidhai > vidhai taram > thevaigal
+payir saagubadi > saagubadi soolalgal > maanavaari murai > puzhudhi vidhaittha maanaavaari nel > mun thayaarippu > nilam thayaritthal
+
+
+separate lines for options
+handling silence - no answer
+
+Q1-உங்க பயிர தாக்கி இருக்கிற பூச்சி, நோய், அல்லது புழுவோட பேர் தெரியுமா
+Q1a-உங்க பயிர தாக்கி இருக்கிற பூச்சிய நீங்க பாத்திருக்கீங்களா
+Q2-உங்க பயிர  தாக்கி இருக்கிறது பூச்சியா, நோயா இல்ல புழுவா
+Q3-அந்த பூச்சி அல்லது புழுவோட பெயர் என்ன
+Q4-அந்த நோயோட பெயர் என்ன
+Q5-உங்க பயிர்ல பாதிக்கப்பட்ட பகுதி, தண்டா, இலையா, மணிகளா, உறையா, கணுவா, கழுத்தா, கதிரா
+Q6-பாதிக்கப்பட்ட பகுதி, இங்குள்ள படங்களில் எந்த படம் மாதிரி இருக்குது
+Q7-நீங்க பார்த்த பூச்சி அல்லது புழு இப்போ எந்த நிலைல இருக்குது, முட்டையா, புழுவா, இளம் பூச்சியா,  அல்லது பூச்சியா
+Q8-மேலும் பூச்சியின் விபரம் மற்றும் தாக்குதலின் அறிகுறிகள் பற்றி தெரிந்துகொள்ள வேண்டுமென்றால் ஆம் என்று கூறவும். கொடுக்கப்பட்ட விவரம் போதுமானதாக இருந்தால் இல்லை என்று கூறவும்.

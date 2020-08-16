@@ -1,0 +1,45 @@
+#!/bin/tcsh -f
+
+if ($# != 2) then
+	echo "Arg1 --> keyword"
+	echo "Arg1 --> lexicon to check with"
+exit (-1)
+endif
+
+set start = 1
+set cnt = `cat lexicon/$2/dictionary |wc -l`
+
+#mkdir likelihood_analysis/$1
+#while ($start <= $cnt)
+set kw = `cat $1`
+echo $kw
+set st = `cat wrd_lab_wav/$kw{_aj1.wrd} |grep -w $kw | cut -d " " -f1`
+set et = `cat wrd_lab_wav/$kw{_aj1.wrd} |grep -w $kw | cut -d " " -f2`
+
+HCopy -C config_files/speech_config_file -s $st -e $et wrd_lab_wav/$kw{_aj1.wav} wrd_lab_wav/$kw{_aj1.mfc}
+
+echo wrd_lab_wav/$kw{_aj1.mfc} > feature
+
+set start1 = 1
+
+while ($start1 <= $cnt)
+	set word = `cat lexicon/$2/dictionary|head -$start1|tail -1|cut -d " " -f1`
+	set phn_seq = `cat lexicon/$2/dictionary|head -$start1|tail -1|cut -d " " -f2-`
+	echo $word $phn_seq > lexicon/$2/temp_dict
+	echo "( $word )" > lexicon/$2/temp_syntax
+
+HParse lexicon/$2/temp_syntax lexicon/$2/temp_net
+
+HVite -C config_files/feature_config_file -S feature -i out -H lexicon/newMacros -w lexicon/$2/temp_net lexicon/$2/temp_dict lexicon/tiedlist
+
+
+	cat out >> likelihood_analysis/$kw{_aj1}
+
+@ start1++
+end
+
+rm out
+
+
+#@ start++
+#end

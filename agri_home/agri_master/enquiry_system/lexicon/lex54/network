@@ -1,0 +1,48 @@
+VERSION=1.0
+N=17   L=29   
+I=0    W=SIL                 
+I=1    W=widai               
+I=2    W=!NULL               
+I=3    W=uram                
+I=4    W=sikkalgalx          
+I=5    W=pradaanandilandirwaagam 
+I=6    W=payiridxummurxaigalx 
+I=7    W=ndilamtayaarittal   
+I=8    W=ndiirmeelaanxmai    
+I=9    W=ndadxaweuwayaltayaarippeu 
+I=10   W=ndaatxrxeu          
+I=11   W=meetxtxuppaattitayaarittal 
+I=12   W=maanaawaari         
+I=13   W=arxuwadxai          
+I=14   W=SIL                 
+I=15   W=!NULL               
+I=16   W=!NULL               
+J=0     S=0    E=0    
+J=1     S=2    E=0    
+J=2     S=14   E=1    
+J=3     S=1    E=2    
+J=4     S=3    E=2    
+J=5     S=4    E=2    
+J=6     S=5    E=2    
+J=7     S=6    E=2    
+J=8     S=7    E=2    
+J=9     S=8    E=2    
+J=10    S=9    E=2    
+J=11    S=10   E=2    
+J=12    S=11   E=2    
+J=13    S=12   E=2    
+J=14    S=13   E=2    
+J=15    S=14   E=3    
+J=16    S=14   E=4    
+J=17    S=14   E=5    
+J=18    S=14   E=6    
+J=19    S=14   E=7    
+J=20    S=14   E=8    
+J=21    S=14   E=9    
+J=22    S=14   E=10   
+J=23    S=14   E=11   
+J=24    S=14   E=12   
+J=25    S=14   E=13   
+J=26    S=14   E=14   
+J=27    S=16   E=14   
+J=28    S=0    E=15   

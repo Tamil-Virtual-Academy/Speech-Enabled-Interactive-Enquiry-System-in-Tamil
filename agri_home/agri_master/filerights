@@ -1,0 +1,42 @@
+#all as root
+chcon -R -t httpd_sys_script_exec shellexecute.php
+groupadd apacheusers
+gpasswd -a apache apacheusers
+gpasswd -a username apacheusers 
+#enter the username as necessary
+
+#And then make that group the group owner of the directory in question, eg
+chown -R apache:apacheusers /your/directory
+
+#And finally, make that group-writeable
+chmod -R g+w /your/directory
+
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0      184 Jun 30 13:34 css/instructions.css
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     2265 Jul 26 15:41 css/main.css
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0      642 Jul  1 15:45 css/xmlstyle.css
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     2638 Jun 30 13:34 data/instructions.html
+drwxr-xr-x. 2 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     4096 Jun 30 20:03 data/iterations
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0   303286 Apr  8 16:58 images/background2.jpg
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0  2200755 Apr  8 17:00 images/background3.jpg
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0  1338551 Apr  8 19:23 images/background4.jpg
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0  1143850 Apr  8 19:24 images/background5.jpg
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0  2245743 Jun 30 14:09 images/background6.jpg
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0  1166754 Apr  8 14:37 images/background.jpg
+drwxr-xr-x. 2 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     4096 Jul 25 20:56 images/cropimages
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     1035 Apr  6 05:33 images/index.jpg
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0    10553 Apr  8 15:10 images/micmute.png
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     6628 Apr  8 15:10 images/micro.png
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0    20220 Apr  8 15:11 images/stop4.png
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0    10205 Apr  8 15:11 images/tamil.jpg
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     6195 Apr  8 15:11 images/tick_red.png
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     1287 Apr  8 15:11 images/View_Details.png
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0      563 Apr  8 15:07 js/audiodisplay.js
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     5829 Jul 26 15:29 js/contentloader.js
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     6471 Jul  2 11:09 js/main.js
+drwxr-xr-x. 2 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0     4096 Jul  1 09:07 js/recorderjs
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_script_exec_t:s0     526 Jul  1 14:54 php/getimage.php
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_script_exec_t:s0     159 Jul  2 10:36 php/upload.php
+-rw-rw-rw-. 1 apache apacheusers unconfined_u:object_r:httpd_sys_script_exec_t:s0     103 Jul  5 12:04 scripts/test.sh
+-rw-rw-rw-. 1 apache apacheusers unconfined_u:object_r:httpd_sys_rw_content_t:s0       19 Jul  5 12:15 scripts/triggerfile
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0    58610 Apr 15 06:28 wav/ask.wav
+-rw-r--r--. 1 speech speech      unconfined_u:object_r:httpd_sys_rw_content_t:s0    48492 Apr 15 06:29 wav/thanks.wav

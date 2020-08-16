@@ -1,0 +1,39 @@
+VERSION=1.0
+N=14   L=23   
+I=0    W=!NULL               
+I=1    W=!NULL               
+I=2    W=ilai                
+I=3    W=!NULL               
+I=4    W=kadir               
+I=5    W=kanxeu              
+I=6    W=kazhutteu           
+I=7    W=manxigalx           
+I=8    W=ndaatteu            
+I=9    W=ndel                
+I=10   W=payir               
+I=11   W=tanxdxeu            
+I=12   W=tuur                
+I=13   W=urxai               
+J=0     S=3    E=1    
+J=1     S=0    E=2    
+J=2     S=2    E=3    
+J=3     S=4    E=3    
+J=4     S=5    E=3    
+J=5     S=6    E=3    
+J=6     S=7    E=3    
+J=7     S=8    E=3    
+J=8     S=9    E=3    
+J=9     S=10   E=3    
+J=10    S=11   E=3    
+J=11    S=12   E=3    
+J=12    S=13   E=3    
+J=13    S=0    E=4    
+J=14    S=0    E=5    
+J=15    S=0    E=6    
+J=16    S=0    E=7    
+J=17    S=0    E=8    
+J=18    S=0    E=9    
+J=19    S=0    E=10   
+J=20    S=0    E=11   
+J=21    S=0    E=12   
+J=22    S=0    E=13   

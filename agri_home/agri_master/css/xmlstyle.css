@@ -1,0 +1,36 @@
+/*Styles for the XML file*/
+.que {
+	display: block;
+	font-weight: bold;
+	font-size: 150%;
+  color: #32332E;
+  text-shadow: 1px 1px 1px #32332E;
+  /*background-color: #FEFFE6*/
+}
+
+.quest {
+  display: block;
+  font-weight: bold;
+  font-size: 150%;
+  color: #32332E;
+  text-shadow: 1px 1px 1px #32332E;
+  /*background-color: #FEFFE6*/
+}
+
+.ans {
+	display: block;
+	font-weight: bold;
+	font-size: 150%;
+  color: #32332E;
+  text-shadow: 1px 1px 1px #32332E;
+  /*background-color: #FEFFE6*/
+}
+
+.answer {
+  display: block;
+  font-weight: bold;
+  font-size: 130%;
+  color: #32332E;
+  text-shadow: 1px 1px 1px #32332E;
+  /*background-color: #FEFFE6*/
+}

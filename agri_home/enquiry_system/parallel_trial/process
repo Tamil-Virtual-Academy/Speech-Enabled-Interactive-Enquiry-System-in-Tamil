@@ -1,0 +1,28 @@
+#!/bin/tcsh -f
+
+if ($# != 1) then
+	echo "arg1 - text to be synthesised"
+#	echo "arg2 - system"
+	exit(-1)
+endif
+
+rm -rf etc/text prompt-utt/* lab/* wav/* lists/gen.scp temp* lists/word lists/trans_word lists/out_word 
+rm wordpronunciation
+
+echo "$1" > temp2
+
+cp festvox/ssn_tamil_male_clunits.scm festvox/ssn_hts_demo_clunits.scm
+cp festvox/ssn_tamil_female_lexicon.scm festvox/ssn_hts_demo_lexicon.c=scm
+
+perl scripts/normalize_all.pl temp2 temp3
+cp temp3 temp2
+set sentence = `cat temp2`
+echo "(1 "'"'$sentence.'"'")" > lists/text
+
+
+/home/speech/installations/festival/bin/festival -b festvox/build_clunits.scm '(build_prompts "lists/text")'
+make
+ls `pwd`/lab/1.lab > lists/gen.scp
+./scripts/hts_engine.pl scripts/Config.pm
+
+

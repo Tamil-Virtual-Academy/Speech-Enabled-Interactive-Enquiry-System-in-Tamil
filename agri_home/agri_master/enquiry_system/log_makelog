@@ -1,0 +1,20 @@
+make[1]: Entering directory '/var/www/html/agri_0324/enquiry_system/scripts'
+# Extracting monophone and fullcontext labels from utterance files
+for utt in ../prompt-utt/*.utt; do \
+	base=`basename ${utt} .utt`; \
+	if [ -s ${utt} ]; then \
+		/home/jjoysingh/speech/festival/examples/dumpfeats    -eval     extra_feats.scm \
+				-relation Segment \
+				-eval ../utts_for_hts_phoneset.scm \
+				-feats    label.feats \
+				-output   tmp \
+				${utt}; \
+	fi; \
+	gawk -f label-full.awk tmp > ../lab/${base}.lab; \
+done
+rm -f tmp
+# Generating a generation label script
+for lab in /var/www/html/agri_0324/enquiry_system/lab/*.lab; do \
+	echo ${lab} >> ../lists/gen.scp; \
+done
+make[1]: Leaving directory '/var/www/html/agri_0324/enquiry_system/scripts'

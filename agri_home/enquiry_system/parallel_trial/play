@@ -1,0 +1,3 @@
+#!/bin/tcsh -f
+
+play parallel_trial/aamaa_aj1.wav

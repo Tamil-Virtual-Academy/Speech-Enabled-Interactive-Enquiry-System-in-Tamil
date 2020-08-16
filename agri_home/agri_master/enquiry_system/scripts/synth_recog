@@ -1,0 +1,67 @@
+#!/bin/tcsh
+
+# function log() {
+#     echo "LINENO: ${LINENO}"
+#     echo "BASH_LINENO: ${BASH_LINENO[*]}"
+# }
+
+if ($# != 3) then
+	echo "arg1 - questions-recognition map"
+	echo "arg2 - questions list"
+	echo "arg3 - question number (Q1, Q2, etc.)"
+#	echo "arg4 - keyword transliterated-utf8 map"
+	exit(-1)
+endif
+
+set kw = illa
+set repeatflag = 0;
+
+while ($kw != aam)
+	if ($repeatflag == 0) then
+		echo 107 > ../tasker.txt
+		sleep 1
+		set ques = `grep -w $3 $2 |cut -d "-" -f2`
+		echo $ques > ../question.txt
+		echo 101 > ../tasker.txt
+		tcsh scripts/complete "$ques"
+	else
+		tcsh scripts/complete "மீண்டும்"
+	endif
+
+	set lex = `grep -w $3 $1 |cut -d " " -f2`
+	./scripts/recognition lexicon/$lex
+	# if ($?=1) then
+	# 	exit 1
+	# endif
+	cp keyword keyword1
+
+	set keyword = `cat keyword`
+	set dec = `cat lh_dec`
+	set kw_utf8 = `grep -w $keyword lists/kw_trans_utf8_map | cut -d " " -f2-`
+
+	if ($dec == right) then
+		#set ans_display = `cat keyword`
+		set kw = aam
+	else
+		set repeatflag = 1
+		./scripts/complete "நீங்கள் $kw_utf8 என்று கூறினீர்களா"
+		# aplay chime.wav &
+		./scripts/recognition lexicon/lex1
+		set kw1 = `cat keyword`
+		set kw = `grep -w $kw1 lists/keyword_map | cut -d " " -f1 | head -1`
+		if ($kw == aam) then
+			cp keyword1 keyword
+			#echo $kw > ../answer.txt
+			#echo 102 > ../tasker.txt
+		endif
+	endif
+end
+
+echo $kw_utf8 > ../answer.txt
+echo 102 > ../tasker.txt
+sleep 1
+#set kw1 = `cat keyword1`
+#grep -w $kw1 lists/keyword_map | cut -d " " -f1 | head -1 > keyword
+echo 103 > ../tasker.txt
+sleep 1
+rm keyword1
